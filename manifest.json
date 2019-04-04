@@ -1,0 +1,30 @@
+{
+  "name": "My-IME",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "My IME for MS-Shuangpin input.",
+  "background":  {
+    "scripts": [
+      "jquery.min.js",
+      "parse.js",
+      "baiduTranser.js",
+      "MyIME.js",
+      "main.js"
+      ]
+  },
+  "permissions": [
+    "input",
+    "https://olime.baidu.com/*",
+    "http://olime.baidu.com/*"
+  ],
+  "input_components": [
+    {
+      "name": "My IME",
+      "type": "ime",
+      "id": "test",
+      "description": "My IME",  // A user visible description
+      "language": "zh-CN",  // The primary language this IME is used for
+      "layouts": ["us::eng"]  // The supported keyboard layouts for this IME
+    }
+  ]
+}
