@@ -111,7 +111,7 @@ MSSP.prototype.parseSP = function (text) {
           result.text += "in";
           break;
         case "o":
-          if (text.charAt(i - 1).match(/^[obpmflw]$/)) {
+          if (text.charAt(i - 1).match(/^[obpmfw]$/)) {
             result.text += "o";
           } else {
             result.text += "uo";
