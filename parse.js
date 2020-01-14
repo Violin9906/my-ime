@@ -53,7 +53,7 @@ MSSP.prototype.parseSP = function (text) {
           result.text += text.charAt(i);
           break;
         case "o":
-          result.text += "'";
+          result.text += "";
           break;
         default:
           j = -1;
