@@ -55,7 +55,13 @@ MSSP.prototype.parseSP = function (text) {
         case "o":
           result.text += "";
           break;
-        default:
+        case "e":
+          result.text += "";
+          break;
+        case "a":
+          result.text += "";
+          break;        
+	default:
           j = -1;
           result.text += text.charAt(i);
           result.space.push(result.text.length);
@@ -68,17 +74,13 @@ MSSP.prototype.parseSP = function (text) {
           result.text += "a";
           break;
         case "b":
-          result.text += "ou";
+          result.text += "in";
           break;
         case "c":
-          result.text += "iao";
+          result.text += "ao";
           break;
         case "d":
-          if (text.charAt(i - 1).match(/^[gkhviu]$/)) {
-            result.text += "uang";
-          } else {
-            result.text += "iang";
-          }
+          result.text += "ai"; 
           break;
         case "e":
           result.text += "e";
@@ -99,16 +101,24 @@ MSSP.prototype.parseSP = function (text) {
           result.text += "an";
           break;
         case "k":
-          result.text += "ao";
+	  if (text.charAt(i - 1).match(/^[bpmdtnljqxy]$/)) {
+            result.text += "ing";
+	  } else {
+	    result.text += "uai";
+	  }
           break;
         case "l":
-          result.text += "ai";
+	  if (text.charAt(i - 1).match(/^[nljqx]$/)) {
+            result.text += "iang";
+	  } else{
+	    result.text += "uang";
+          }
           break;
         case "m":
           result.text += "ian";
           break;
         case "n":
-          result.text += "in";
+          result.text += "iao";
           break;
         case "o":
           if (text.charAt(i - 1).match(/^[obpmfw]$/)) {
@@ -118,17 +128,13 @@ MSSP.prototype.parseSP = function (text) {
           }
           break;
         case "p":
-          result.text += "un";
+          result.text += "ie";
           break;
         case "q":
           result.text += "iu";
           break;
         case "r":
-          if (text.charAt(i - 1) == "o") {
-            result.text += "er";
-          } else {
-            result.text += "uan";
-          }
+          result.text += "uan";
           break;
         case "s":
           if (text.charAt(i - 1).match(/^[jqx]$/)) {
@@ -144,32 +150,27 @@ MSSP.prototype.parseSP = function (text) {
           result.text += "u";
           break;
         case "v":
-          result.text += "ui";
+          if (text.charAt(i - 1).match(/^[ln]$/)) {
+	    result.text += "v";
+	  } else {
+	    result.text += "ui";
+	  }
           break;
         case "w":
-          if (text.charAt(i - 1).match(/^[ljqx]$/)) {
-            result.text += "ia";
-          } else {
-            result.text += "ua";
-          }
-          break;
-        case "x":
-          result.text += "ie";
-          break;
-        case "y":
-          if (text.charAt(i - 1).match(/^[nl]$/)) {
-            result.text += "v";
-          } else if (text.charAt(i - 1).match(/^[jqxy]$/)) {
-            result.text += "u";
-          } else {
-            result.text += "uai";
-          }
-          break;
-        case "z":
           result.text += "ei";
           break;
-        case ";":
-          result.text += "ing";
+        case "x":
+	  if (text.charAt(i - 1).match(/^[qdljx]$/)) {
+            result.text += "ia";
+          } else {
+	    result.text += "ua";
+	  }
+	  break;
+        case "y":
+          result.text += "un";
+          break;
+        case "z":
+          result.text += "ou";
           break;
         default:
           j = -1;
