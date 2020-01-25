@@ -2,6 +2,8 @@
 > Shuangpin IME for Chrome OS  
 用于Chrome OS的双拼输入法
 
+**该项目已经停止更新，取而代之的是my-ime2，请移步[Violin9906/my-ime2](https://github.com/Violin9906/my-ime2)**
+
 ## 项目说明
 新买的Chromebook居然不支持双拼输入，Google一鸽再鸽，只好先自己造轮子了。我用的是微软双拼，所以目前只写了微软双拼的方案（并且还没写完）。截至目前，这个输入法的功能还没有做完，不过已经处于能用的状态了。
 
